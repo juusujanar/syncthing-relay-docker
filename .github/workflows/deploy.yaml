@@ -13,7 +13,7 @@ permissions:
   issues: write
 
 jobs:
-  goreleaser:
+  build:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install dependencies
-        run: sudo apt install -y qemu-user-static binfmt-support
+        run: sudo apt install -y qemu-user-static binfmt-support gcc
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -54,8 +54,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          # Same as available for golang official image
-          platforms: linux/386,linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v6,linux/ppc64le,linux/s390x
+          platforms: linux/amd64,linux/arm64/v8,linux/arm/v7,linux/arm/v6
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
