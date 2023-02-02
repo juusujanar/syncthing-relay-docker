@@ -2,7 +2,9 @@
 
 This repository offers a Syncthing Relay server in a Docker image format. The relay servers are used in situations, where clients can not connect directly to each other, for example due to NAT or firewalls.
 
-More information: https://docs.syncthing.net/users/relaying.html
+The Docker image is available for AMD64, ARMv6, ARMv7 and ARMv8.
+
+More information about relay servers: https://docs.syncthing.net/users/relaying.html
 
 This repository uses code from upstream Syncthing repository: https://github.com/syncthing/syncthing
 

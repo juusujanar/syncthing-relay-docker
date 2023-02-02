@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install dependencies
-        run: sudo apt install -y qemu-user-static binfmt-support gcc
+        run: sudo apt install -y qemu-user-static binfmt-support
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -45,8 +45,8 @@ jobs:
           tags: |
             type=ref,event=branch
             type=ref,event=pr
-            type=semver,pattern={{version}}
-            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern=v{{version}}
+            type=semver,pattern=v{{major}}.{{minor}}
             type=sha
 
       - name: Build and push
