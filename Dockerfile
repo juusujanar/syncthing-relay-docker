@@ -1,7 +1,7 @@
 FROM golang:1.20-alpine AS builder
 WORKDIR /opt/strelaysrv
 
-ENV SYNCTHING_VERSION 1.23.4
+ENV SYNCTHING_VERSION 1.23.6
 
 RUN apk add --no-cache ca-certificates curl && \
   curl -L https://github.com/syncthing/syncthing/releases/download/v${SYNCTHING_VERSION}/syncthing-source-v${SYNCTHING_VERSION}.tar.gz | tar xzf - && \
