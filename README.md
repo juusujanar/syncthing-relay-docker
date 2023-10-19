@@ -1,3 +1,9 @@
+:warning: Syncthing now offers an official Docker image for their Relay server: https://hub.docker.com/r/syncthing/relaysrv
+
+**This repository is archived and will not get any further updates.**
+
+---
+
 # Syncthing Relay server in Docker
 
 This repository offers a Syncthing Relay server in a Docker image format. The relay servers are used in situations, where clients can not connect directly to each other, for example due to NAT or firewalls.
